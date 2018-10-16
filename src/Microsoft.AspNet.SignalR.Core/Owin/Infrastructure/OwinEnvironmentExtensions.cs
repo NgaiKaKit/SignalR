@@ -49,16 +49,17 @@ namespace Microsoft.AspNet.SignalR
 
         internal static bool SupportsWebSockets(this IDictionary<string, object> environment)
         {
-            object value;
-            if (environment.TryGetValue(OwinConstants.ServerCapabilities, out value))
-            {
-                var capabilities = value as IDictionary<string, object>;
-                if (capabilities != null)
-                {
-                    return capabilities.ContainsKey(OwinConstants.WebSocketVersion);
-                }
-            }
-            return false;
+            return environment == null ? true: true;
+            // object value;
+            // if (environment.TryGetValue(OwinConstants.ServerCapabilities, out value))
+            // {
+            //     var capabilities = value as IDictionary<string, object>;
+            //     if (capabilities != null)
+            //     {
+            //         return capabilities.ContainsKey(OwinConstants.WebSocketVersion);
+            //     }
+            // }
+            // return false;
         }
 
         internal static bool IsDebugEnabled(this IDictionary<string, object> environment)

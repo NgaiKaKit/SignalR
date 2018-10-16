@@ -172,7 +172,7 @@ namespace Microsoft.AspNet.SignalR.Redis
             {
                 if (lastId.HasValue && message.Id < lastId.Value)
                 {
-                    _trace.TraceEvent(TraceEventType.Error, 0, $"ID regression occurred. The next message ID {message.Id} was less than the previous message {lastId.Value}");
+                    _trace.TraceEvent(TraceEventType.Error, 0, "ID regression occurred. The next message ID {0} was less than the previous message {1}", message.Id, lastId.Value);
                 }
                 lastId = message.Id;
                 OnReceived(streamIndex, message.Id, message.ScaleoutMessage);

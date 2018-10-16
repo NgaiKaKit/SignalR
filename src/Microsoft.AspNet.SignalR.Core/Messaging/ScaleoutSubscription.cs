@@ -232,7 +232,7 @@ namespace Microsoft.AspNet.SignalR.Messaging
                                     // means we missed messages. Use the new mappingId.
                                     if (message.MappingId > mapping.Id)
                                     {
-                                        _trace.TraceEvent(TraceEventType.Verbose, 0, $"Extracted additional messages, updating cursor to new Mapping ID: {message.MappingId}");
+                                        _trace.TraceEvent(TraceEventType.Verbose, 0, "Extracted additional messages, updating cursor to new Mapping ID: {0}", message.MappingId);
                                         return message.MappingId;
                                     }
                                 }
